@@ -10,7 +10,7 @@ Console.WriteLine(string.Join(", ", b));
 string[] CreateArray()
 {
     Console.WriteLine("Введите длину масива строк");
-    string[] newArray = new string[LengthArray()];
+    string[] newArray = new string[IntPositiveValue()];
     for (int i = 0; i < newArray.Length; i++)
     {
         Console.WriteLine($"Введите {i}-й элемент массива");
@@ -19,17 +19,7 @@ string[] CreateArray()
     }
     return newArray;
 
-    int LengthArray()
-    {
-        int intLengthArray;
-        bool check = int.TryParse(Console.ReadLine(), out intLengthArray);
-        if (check && intLengthArray > 0) return intLengthArray;
-        else
-        {
-            Console.WriteLine("Ошибка! Введите положительное чило больше 0");
-            return LengthArray();
-        }
-    }
+
 }
 
 string[] SortedArray(string[] incomingArray)
@@ -50,4 +40,16 @@ string[] SortedArray(string[] incomingArray)
         }
     }
     return newArray;
+}
+
+int IntPositiveValue()
+{
+    int intLengthArray;
+    bool check = int.TryParse(Console.ReadLine(), out intLengthArray);
+    if (check && intLengthArray > 0) return intLengthArray;
+    else
+    {
+        Console.WriteLine("Ошибка! Введите положительное чило больше 0");
+        return IntPositiveValue();
+    }
 }

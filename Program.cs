@@ -1,11 +1,8 @@
-﻿
-string[] a = CreateArray();
+﻿string[] a = CreateArray();
 Console.WriteLine();
 Console.WriteLine(string.Join(", ", a));
 string[] b = SortedArray(a);
 Console.WriteLine(string.Join(", ", b));
-
-
 
 string[] CreateArray()
 {
@@ -14,12 +11,10 @@ string[] CreateArray()
     for (int i = 0; i < newArray.Length; i++)
     {
         Console.WriteLine($"Введите {i}-й элемент массива");
-        newArray[i] = Console.ReadLine();
+        newArray[i] = (Console.ReadLine());
         Console.WriteLine();
     }
     return newArray;
-
-
 }
 
 string[] SortedArray(string[] incomingArray)
